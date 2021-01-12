@@ -15,33 +15,35 @@ class SalesforceRoute extends RequestRoute
         $defaults['gate'] =[
             'required' => 'email',
         ];
-        $defaults['defaults'] = [
+        $defaults['fields'] = [
             'oid' => '',
             'retURL' => '#',
             'encoding' => 'UTF-8',
             'debugEmail' => '',
             'debug' => '0',
-        ];
-        $defaults['fields']['mapping'] = [
-            'first_name' => 'first_name',
-            'last_name' => 'last_name',
-            'company' => 'company',
-            'department' => 'department',
-            'email' => 'email',
-            'phone' => 'phone',
-            'zip' => 'zip',
-            'country' => 'country_code',
-            'city' => 'city',
-            'street' => 'street',
-            'fax' => 'fax',
-            'title' => 'title',
-            'language' => 'language',
-            'lead_source' => 'lead_source',
 
-        ];
-        $defaults['fields']['unmapped'] = [
-            SubmissionConfigurationInterface::KEY_SELF => 'description',
-            'appendKeyValue' => true,
+            'first_name' => ['field' => 'first_name'],
+            'last_name' => ['field' => 'last_name'],
+            'company' => ['field' => 'company'],
+            'department' => ['field' => 'department'],
+            'email' => ['field' => 'email'],
+            'phone' => ['field' => 'phone'],
+            'zip' => ['field' => 'zip'],
+            'country' => ['field' => 'country_code'],
+            'city' => ['field' => 'city'],
+            'street' => ['field' => 'street'],
+            'fax' => ['field' => 'fax'],
+            'title' => ['field' => 'title'],
+            'language' => ['field' => 'language'],
+            'lead_source' => ['field' => 'lead_source'],
+
+            'description' => [
+                'fieldCollector' => [
+                    'exclude' => '',
+                    'ignoreIfEmpty' => true,
+                    'unprocessedOnly' => true,
+                ],
+            ],
         ];
         return $defaults;
     }
