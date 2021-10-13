@@ -2,7 +2,6 @@
 
 namespace FormRelay\Salesforce\Route;
 
-use FormRelay\Core\Model\Submission\SubmissionConfigurationInterface;
 use FormRelay\Request\Route\RequestRoute;
 
 class SalesforceRoute extends RequestRoute
